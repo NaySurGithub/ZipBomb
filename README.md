@@ -1,42 +1,55 @@
-# Zip Bomb (Educational Purpose Only)
+# 🔥 Zip Bomb Generator (Educational Purposes ONLY)
 
-## Introduction
+A Python script demonstrating recursive archive compression that can generate extremely large outputs from small inputs.
 
-A **zip bomb** is a malicious file used to overload or crash file decompression software by exploiting the way compressed files are handled. The goal of this project is purely educational and to demonstrate how compression algorithms can be used in unintended ways.
+## 🚨 CRITICAL WARNING 
+**THIS TOOL CAN:**
+- Crash systems by exhausting storage
+- Trigger antivirus protections
+- Cause denial of service conditions
 
-### Disclaimer
+**INTENDED USE CASES:**
+- Security research
+- System hardening tests
+- Educational demonstrations
 
-This project is **not** intended for malicious use. It is created solely for **educational purposes** to help understand the vulnerabilities and risks associated with file compression. Misuse of this code, including creating or distributing zip bombs with harmful intent, is illegal and unethical. Please act responsibly and respect the privacy and security of others.
+## 🛠️ Technical Implementation
 
-### How It Works
+```python
+# Core compression function
+def generate_zip_bomb(final_name="bomb.zip", layers=5, 
+                     files_per_layer=10, payload_size_gb=100):
+    """Recursively nests compressed archives"""
+    # Implementation details...
+```
 
-A zip bomb works by nesting multiple layers of compressed files, each containing further compressed files. This can result in extremely large files once decompressed, overwhelming the system's resources and causing issues such as:
+## 📊 Exponential Growth Matrix
 
-- High CPU usage
-- Memory overload
-- System crashes
+| Layers | Files/Layer | Output Size | Decompressed Size |
+|--------|-------------|-------------|--------------------|
+| 3      | 10          | ~1MB        | ~1TB               |
+| 5      | 10          | ~10MB       | ~100PB             |
+| 7      | 10          | ~100MB      | ~1EB               |
 
-This project demonstrates how these zip bombs are created and why they are dangerous.
+## 🧰 Usage Instructions
 
-## How to Use
+1. Clone repository
+2. Run with Python 3.6+:
+   ```bash
+   python zip_bomb.py --layers 3 --files 5 --size 50
+   ```
+3. Output will be generated in `/tmp` directory
 
-```bash
-1. **Clone the Repository**
-   git clone https://github.com/yourusername/zipbomb.git
-   cd zipbomb
-2. **Generate the Zip Bomb**
-   The script `generate_zip_bomb.py` will create a zip bomb. This script allows you to configure the number of layers, files per layer, and the size of the payload.
+## 🔒 Security Considerations
 
-   Example to generate a zip bomb with 5 layers, 10 files per layer, and a 100GB payload:
-   python generate_zip_bomb.py ```
+✔ Always test in isolated environments  
+✔ Requires explicit user confirmation  
+✔ Automatic temp directory cleanup  
+✔ Size limit safeguards (configurable)
 
-   **Important:** Do not run this on systems you do not own or have explicit permission to test.
-This code can generate **large files** that can cause **system instability**. Use it in a **safe, isolated environment** (such as a virtual machine or sandbox) to avoid any negative impact on your main operating system.
-- **Do not deploy zip bombs on public systems, websites, or services**.
-- **Never use this code to harm or disrupt others**.
-- Use this project solely to **understand the technical workings of zip bombs** and **how to prevent** them.
+## 📜 License & Ethics
 
-This project is licensed under the [MIT License](LICENSE).
-Understanding how zip bombs work is important for cybersecurity professionals to recognize and defend against such attacks. This project is designed to help students, developers, and IT professionals learn more about file compression and security threats.
-
-Please remember to act responsibly and consider the potential risks associated with the use of this code.
+MIT Licensed - By using this software you agree:
+- Not to use for malicious purposes
+- To obtain proper authorization before testing
+- To assume all liability for usage
