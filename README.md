@@ -28,7 +28,7 @@ This project demonstrates how these zip bombs are created and why they are dange
    The script `generate_zip_bomb.py` will create a zip bomb. This script allows you to configure the number of layers, files per layer, and the size of the payload.
 
    Example to generate a zip bomb with 5 layers, 10 files per layer, and a 100GB payload:
-   python generate_zip_bomb.py
+   python generate_zip_bomb.py ```
 
    **Important:** Do not run this on systems you do not own or have explicit permission to test.
 This code can generate **large files** that can cause **system instability**. Use it in a **safe, isolated environment** (such as a virtual machine or sandbox) to avoid any negative impact on your main operating system.
